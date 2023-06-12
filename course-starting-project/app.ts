@@ -1,6 +1,12 @@
-const person: { name: string; age: number } = {
+const person = {
   name: "nanu",
   age: 25,
+  hobbies: ["movies", "books"],
 };
 
-console.log(person.nickname);
+let favoriteHobbies: string[];
+favoriteHobbies = ["movies"];
+
+for (const hobby of person.hobbies) {
+  console.log(hobby.toUpperCase);
+}
