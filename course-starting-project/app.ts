@@ -1,15 +1,9 @@
-const add = (n1: number, n2: number) => {
-  return n1 + n2;
-};
+let userInput: unknown;
+let userName: string;
 
-const printResult = (number: number) => {
-  console.log("Result: " + number);
-};
+userInput = 5;
+userInput = "Max";
 
-printResult(add(5, 12));
-
-let combineValues: (a: number, b: number) => number;
-
-combineValues = add;
-
-console.log(combineValues(8, 8))
+if (typeof userInput === 'string') {
+  userName = userInput;
+}
