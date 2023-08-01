@@ -1,8 +1,11 @@
-class Department {
+abstract class Department {
   private employees: string[] = [];
+  name: string;
   private lastReport: string;
 
-  constructor(private name: string) {}
+  constructor(name: string) {
+    this.name = name;
+  }
 
   get mostRecentReport() {
     return this.lastReport;
@@ -12,9 +15,7 @@ class Department {
     this.lastReport = report;
   }
 
-  describe(this: Department) {
-    console.log('Department: ' + this.name);
-  }
+  abstract describe(this: Department): void;
 
   static createEmployee(name: string) {
     return { name: name };
@@ -30,15 +31,19 @@ class Department {
   }
 }
 
-class ITDeaprtment extends Department {
+class ITDepartment extends Department {
   constructor(public admins: string[]) {
     super('IT');
+  }
+
+  describe(this: Department): void {
+    console.log(this.name);
   }
 }
 
 const employeeNew = Department.createEmployee('Jax');
 
-const accounting = new Department('Accounting');
+const accounting = new ITDepartment([]);
 
 accounting.addEmployee('Nanu');
 accounting.addEmployee('Naruto');
