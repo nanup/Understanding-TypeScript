@@ -1,7 +1,16 @@
 class Department {
   private employees: string[] = [];
+  private lastReport: string;
 
   constructor(private name: string) {}
+
+  get mostRecentReport() {
+    return this.lastReport;
+  }
+
+  set mostRecentReport(report: string) {
+    this.lastReport = report;
+  }
 
   describe(this: Department) {
     console.log('Department: ' + this.name);
