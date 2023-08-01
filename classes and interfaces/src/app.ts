@@ -17,6 +17,12 @@ class Department {
   }
 }
 
+class ITDeaprtment extends Department {
+  constructor(public admins: string[]) {
+    super('IT');
+  }
+}
+
 const accounting = new Department('Accounting');
 
 accounting.addEmployee('Nanu');
