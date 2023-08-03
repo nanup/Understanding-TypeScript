@@ -34,3 +34,7 @@ const userInputElement = document.getElementById(
 )! as HTMLInputElement;
 
 userInputElement.value = 'hi there!';
+
+interface ErrorContainer {
+  [prop: string]: string;
+}
