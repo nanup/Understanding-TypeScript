@@ -24,9 +24,13 @@ type Universal = Combinable & Numeric;
 function add(a: Combinable, b: Combinable) {
   if (typeof a === 'string' && typeof b === 'string') {
     return a.toString() + b.toString();
-  } else {
+  } else if (typeof a === 'number' && typeof b === 'number') {
     return a + b;
   }
 }
 
-type
+const userInputElement = document.getElementById(
+  'user-input'
+)! as HTMLInputElement;
+
+userInputElement.value = 'hi there!';
